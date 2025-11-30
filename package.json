@@ -1,0 +1,16 @@
+{
+  "name": "ai-test-generator-demo",
+  "version": "1.0.0",
+  "description": "A demo project using GitHub Actions and OpenAI to write Jest tests automatically.",
+  "main": "math.js",
+  "scripts": {
+    "test": "jest",
+    "generate": "node generate-tests.js"
+  },
+  "dependencies": {
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
