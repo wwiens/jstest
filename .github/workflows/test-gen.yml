@@ -1,0 +1,35 @@
+name: Generate AI Tests
+
+on:
+  push:
+    paths:
+      - 'math.js' # Only run when math.js changes to save money/time
+
+permissions:
+  contents: write # Required to commit the new file back to the repo
+
+jobs:
+  generate-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install openai
+
+      - name: Run Generator Script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node generate-tests.js
+
+      - name: Commit and Push New Tests
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 AI Generated Test Cases"
+          file_pattern: "*.test.js"
