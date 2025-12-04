@@ -8,9 +8,13 @@ function subtract(a, b) {
     return a - b;
 }
 
+function multiply(a, b) {
+    return a * b;
+}
+
 // A function to check if a number is even
 function isEven(number) {
     return number % 2 === 0;
 }
 
-module.exports = { add, subtract, isEven };
+module.exports = { add, subtract, isEven, multiply };
