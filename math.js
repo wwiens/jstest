@@ -1,4 +1,4 @@
-// math.js
+// math.js DEMO
 
 function add(a, b) {
     return a + b;
