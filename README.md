@@ -1,2 +1,1 @@
-# jstest
-# lesson3
+Lesson 3 Demo
